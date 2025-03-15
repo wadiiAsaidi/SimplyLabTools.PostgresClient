@@ -1,0 +1,22 @@
+
+
+services:
+    simplylabtools.postgresclient:
+        image: ${DOCKER_REGISTRY-}simplylabtoolspostgresclient
+        build:
+            context: .
+            dockerfile: SimplyLabTools.PostgresClient/Dockerfile
+        ports:
+        - "8080:8080"
+        - "8081:8081"
+    database:
+        image: postgres:latest
+        container_name: postgresContainer
+        environment:
+        - POSTGRES_USER=wadii
+        - POSTGRES_PASSWORD=12690241
+        - POSTGRES_DB=mydatabase
+        ports:
+        - 5432:5433
+
+        restart: always
