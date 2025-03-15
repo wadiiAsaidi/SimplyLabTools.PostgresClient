@@ -12,8 +12,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["SimplyLabTools.PostgresClient/SimplyLabTools.PostgresClient.csproj", "SimplyLabTools.PostgresClient/"]
-RUN dotnet restore "SimplyLabTools.PostgresClient/SimplyLabTools.PostgresClient.csproj"
+COPY ["C:/Dev_BranchDocker/SimplyLabTools.PostgresClient/SimplyLabTools.PostgresClient.csproj", "SimplyLabTools.PostgresClient/"]
+RUN dotnet restore "C:/Dev_BranchDocker/SimplyLabTools.PostgresClient/SimplyLabTools.PostgresClient.csproj"
 COPY . .
 WORKDIR "/src/SimplyLabTools.PostgresClient"
 RUN dotnet build "./SimplyLabTools.PostgresClient.csproj" -c $BUILD_CONFIGURATION -o /app/build
