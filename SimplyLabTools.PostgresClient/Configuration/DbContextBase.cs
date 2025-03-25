@@ -30,6 +30,7 @@ namespace TestDockerProject.Configuration
         }
         private static DbContextOptions<DbContext> GetConnectionString(string connectionString)
         {
+            //get connection string
             var contextOptions = new DbContextOptionsBuilder<DbContext>()
                                        .UseNpgsql(connectionString).Options;
             return contextOptions;
