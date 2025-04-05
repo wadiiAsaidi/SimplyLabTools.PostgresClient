@@ -73,6 +73,23 @@
                         {
                             new Order { Id = 3, Product = "Phone", Quantity = 1, Price = 699.99m }
                         }
+                    },
+                new Customer
+                    {
+                        Id = 2,
+                        FirstName = "wadoo",
+                        LastName = "alsaidi",
+                        Email = "wadii.alsaidi@example.com",
+                        Address = "456 Oak St",
+                        City = "Los Angeles",
+                        State = new State { Id = 2, Abbreviation = "CA", Name = "California" },
+                        Zip = 2004,
+                        Gender = "man",
+                        OrderCount = 1,
+                        Orders = new List<Order>
+                        {
+                            new Order { Id = 3, Product = "IPhone", Quantity = 1, Price = 699.99m }
+                        }
                     }
              };
             return customers;
