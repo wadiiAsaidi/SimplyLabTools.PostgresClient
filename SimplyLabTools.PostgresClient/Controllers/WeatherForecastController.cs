@@ -34,7 +34,24 @@ public class WeatherForecastController : ControllerBase
         }
         dbContext.SaveChanges();
         var getAllCustomer = dbContext.Set<Customer>().ToList();
-
+        getAllCustomer.Add(
+                new Customer
+                {
+                    Id = 2,
+                    FirstName = "wadii new verion work",
+                    LastName = "new verion work alsaidi",
+                    Email = "wadii.alsaidi@example.com new verion work",
+                    Address = "456 Oak St",
+                    City = "Los Angeles new verion work",
+                    State = new State { Id = 2, Abbreviation = "CA", Name = "California" },
+                    Zip = 2004,
+                    Gender = "man",
+                    OrderCount = 1,
+                    Orders = new List<Order>
+                        {
+                            new Order { Id = 3, Product = "IPhone", Quantity = 1, Price = 699.99m }
+                        }
+                });
         return getAllCustomer;
     }
 }
