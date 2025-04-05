@@ -26,13 +26,13 @@ public class WeatherForecastController : ControllerBase
         // Add services to the container.
         var dbContext = new DbContextBase();
 
-        var customers = FakeData.GenerateFakeData();
-        foreach (var item in customers)
-        {
-            dbContext.Add(item);
+        //var customers = FakeData.GenerateFakeData();
+        //foreach (var item in customers)
+        //{
+        //    dbContext.Add(item);
 
-        }
-        dbContext.SaveChanges();
+        //}
+        //dbContext.SaveChanges();
         var getAllCustomer = dbContext.Set<Customer>().ToList();
         getAllCustomer.Add(
                 new Customer
